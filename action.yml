@@ -1,5 +1,5 @@
 name: "Setup and Cache Python Poetry with DeadSnakes"
-description: "Python Poetry setup, including the caching of dependencies and Poetry installation. With DeadSnakes Python versions (https://github.com/deadsnakes)."
+description: "Python Poetry setup, including the caching of dependencies and DeadSnakes Python versions (https://github.com/deadsnakes)."
 branding:
   icon: 'play'
   color: 'blue'

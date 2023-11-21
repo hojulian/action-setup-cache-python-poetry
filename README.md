@@ -1,7 +1,7 @@
-# GitHub Action - Setup and Cache Python Poetry
+# GitHub Action - Setup and Cache Python Poetry with DeadSnakes
 
 This action simplifies the setup and caching of Poetry, and provides the following functionality for GitHub Actions users:
-* Python setup via [`actions/setup-python`](https://github.com/actions/setup-python).
+* Python setup via [`deadsnakes/action`](https://github.com/deadsnakes/action).
 * Poetry install via [`snok/install-poetry`](https://github.com/snok/install-poetry).
 * Poetry binary caching via [`actions/cache`](https://github.com/actions/cache).
 * Poetry dependency caching via [`actions/cache`](https://github.com/actions/cache).
