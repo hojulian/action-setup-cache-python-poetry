@@ -18,7 +18,7 @@ runs:
     #---------------------------#
     #       Set-up python       #
     #---------------------------#
-    - name: Set up python ${{ inputs.python-version }} on ${{ matrix.arch }}
+    - name: Set up python ${{ inputs.python-version }} on ${{ runner.arch }}
       id: setup-python
       uses: deadsnakes/action@v3.0.1
       with:
@@ -31,7 +31,7 @@ runs:
       uses: actions/cache@v3
       with:
         path: ~/.local
-        key: venv-${{ runner.os }}-${{ matrix.arch }}-${{ steps.setup-python.outputs.python-version }}-${{ inputs.poetry-version }}
+        key: venv-${{ runner.os }}-${{ runner.arch }}-${{ inputs.python-version }}-${{ inputs.poetry-version }}
     - name: Install Poetry
       uses: snok/install-poetry@v1
       with:
@@ -46,11 +46,11 @@ runs:
       uses: actions/cache@v3
       with:
         path: .venv
-        key: venv-${{ runner.os }}-${{ matrix.arch }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+        key: venv-${{ runner.os }}-${{ runner.arch }}-${{ inputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
         # Restore cache with this prefix if not exact match with key
         # Note cache-hit returns false in this case, so the below step will run
         restore-keys: |
-          venv-${{ runner.os }}-${{ matrix.arch }}-${{ steps.setup-python.outputs.python-version }}-
+          venv-${{ runner.os }}-${{ runner.arch }}-${{ inputs.python-version }}-
     #----------------------------------------------------------#
     #       Install dependencies if cache does not exist       #
     #----------------------------------------------------------#
